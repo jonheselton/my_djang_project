@@ -1,0 +1,9 @@
+# syntax=DOCKER/DOCKERFILE:1
+FROM --platform=linux/amd64 python
+
+EXPOSE 8000
+WORKDIR /
+COPY requirements.txt /
+RUN pip3 install -r requirements.txt --no-cache-dir
+COPY . /app 
+ENTRYPOINT ["python3"] 
